@@ -65,9 +65,10 @@ int main(void)
 	const int size = 5000;
 	int m[size], i = 0;
 
+
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = rand() % 100 + 1; // заполняем массив случайными числами
+		m[i] = i;
 	}
 
 	start = clock();
@@ -76,10 +77,9 @@ int main(void)
 
 	end = clock();
 	printf("\nВремя(сорт. Шелла):%f", float(end - start) / float(CLOCKS_PER_SEC));
-
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = rand() % 100 + 1; // заполняем массив случайными числами
+		m[i] = i;
 	}
 
 	start = clock_t();
@@ -91,7 +91,7 @@ int main(void)
 
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = rand() % 100 + 1; // заполняем массив случайными числами
+		m[i] = i;
 	}
 
 	start = clock();
