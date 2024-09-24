@@ -10,7 +10,7 @@ int main(void)
 
 	int i = 0, j = 0, r;
 	int elem_c;
-	int n = 1000;
+	int n = 10000;
 	int** a;
 	a = (int**)malloc(n * sizeof(int*));
 	int** b;
