@@ -48,10 +48,11 @@ void qs(int* items, int left, int right) //вызов функции: qs(items, 
 	if (i < right) qs(items, i, right);
 }
 
-int compare(const void* a, const void* b) //сравнение двух элементов для qsort
+int compare(const void* a, const void* b)
 {
 	return (*(int*)a - *(int*)b);
 }
+
 int main(void)
 {
 	setlocale(LC_ALL, "");
@@ -67,20 +68,30 @@ int main(void)
 
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = max;
-		max--;
+		if (i < (size / 2)) {
+			m[i] = i;
+		}
+		else {
+			m[i] = max;
+			max--;
+		}
 	}
-
 	start = clock();
 
 	shell(m, size);
 
 	end = clock();
 	printf("\nВремя(сорт. Шелла):%f", float(end - start) / float(CLOCKS_PER_SEC));
+
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = max;
-		max--;
+		if (i < (size / 2)) {
+			m[i] = i;
+		}
+		else {
+			m[i] = max;
+			max--;
+		}
 	}
 
 	start = clock_t();
@@ -92,8 +103,13 @@ int main(void)
 
 	for (int i = 0; i < size; i++)
 	{
-		m[i] = max;
-		max--;
+		if (i < (size / 2)) {
+			m[i] = i;
+		}
+		else {
+			m[i] = max;
+			max--;
+		}
 	}
 
 	start = clock();
@@ -105,3 +121,4 @@ int main(void)
 
 	return(0);
 }
+
